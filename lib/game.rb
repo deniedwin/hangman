@@ -1,17 +1,22 @@
 class Game
   def start_game
-    puts 'game started'
-    setup
+    pre_setup
     play_rounds
     announce_result
   end
 
-  def setup
-    puts 'create player, board, judge'
+  def pre_setup
+    @player = Player.new
+    @board = Board.new
+    @judge = Judge.new
+    @secret_word = choose_code_word
+    @won = false
+    puts 'game started'
   end
 
   def play_rounds
     puts 'play rounds of the game'
+    @player.make_guess
   end
 
   def announce_result
