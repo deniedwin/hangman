@@ -1,11 +1,3 @@
-# main file of the project hangman
-# 
-# words = File.open("google-10000-english-no-swears.txt") do |file|
-#   file.read.split
-# end
-
-# puts words.inspect
-
 # requiered files inside lib folder for app to run correctly
 require_relative 'lib/game'
 require_relative 'lib/gameio'

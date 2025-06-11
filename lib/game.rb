@@ -1,10 +1,10 @@
 class Game
   def start_game
-    puts "game started"
-    select_secret_word
+    puts 'game started'
+    choose_code_word
   end
 
-  def select_secret_word
+  def choose_code_word
     words = File.open('google-10000-english-no-swears.txt', 'r') do |file|
       file.read.split
     end
@@ -12,4 +12,5 @@ class Game
     secret_word = filter_words.sample
     secret_word
   end
+
 end
