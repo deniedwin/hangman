@@ -1,7 +1,21 @@
 class Game
   def start_game
     puts 'game started'
-    choose_code_word
+    setup
+    play_rounds
+    announce_result
+  end
+
+  def setup
+    puts 'create player, board, judge'
+  end
+
+  def play_rounds
+    puts 'play rounds of the game'
+  end
+
+  def announce_result
+    puts 'announce results so far'
   end
 
   def choose_code_word
