@@ -20,7 +20,6 @@ class Game
     @max_guess_attempts.times do
       guess = @player.input_guess
       feedback = @judge.check_guess(guess, @secret_word)
-      puts feedback
       @board.record_turn(@secret_word, feedback) #fix this to include feedback
       @board.draw_board
     end
