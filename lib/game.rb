@@ -11,12 +11,18 @@ class Game
     @judge = Judge.new
     @secret_word = choose_code_word
     @won = false
+    @max_guess_attempts = 3
     puts 'game started'
+    puts @secret_word
   end
 
   def play_rounds
-    puts 'play rounds of the game'
-    @player.make_guess
+    @max_guess_attempts.times do
+      @board.draw_board
+      guess = @player.input_guess
+      feedback = @judge.check_guess(guess, @secret_word)
+      @board.record_turn(guess, @secret_word) #fix this to include feedback
+    end
   end
 
   def announce_result
