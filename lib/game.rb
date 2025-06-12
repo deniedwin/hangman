@@ -18,10 +18,10 @@ class Game
 
   def play_rounds
     @max_guess_attempts.times do
-      @board.draw_board
+      @board.draw_board(@secret_word.length)
       guess = @player.input_guess
       feedback = @judge.check_guess(guess, @secret_word)
-      @board.record_turn(guess, @secret_word) #fix this to include feedback
+      @board.record_turn(@secret_word, feedback) #fix this to include feedback
     end
   end
 
