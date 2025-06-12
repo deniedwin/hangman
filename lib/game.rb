@@ -6,10 +6,10 @@ class Game
   end
 
   def pre_setup
-    @player = Player.new
-    @board = Board.new
-    @judge = Judge.new
     @secret_word = choose_code_word
+    @player = Player.new
+    @board = Board.new(@secret_word.length)
+    @judge = Judge.new
     @won = false
     @max_guess_attempts = 3
     puts 'game started'
@@ -18,10 +18,11 @@ class Game
 
   def play_rounds
     @max_guess_attempts.times do
-      @board.draw_board(@secret_word.length)
       guess = @player.input_guess
       feedback = @judge.check_guess(guess, @secret_word)
+      puts feedback
       @board.record_turn(@secret_word, feedback) #fix this to include feedback
+      @board.draw_board
     end
   end
 
