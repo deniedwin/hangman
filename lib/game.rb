@@ -22,6 +22,7 @@ class Game
       feedback = @judge.check_guess(guess, @secret_word)
       @board.record_turn(@secret_word, feedback)
       @board.draw_board
+      puts ''
       if @board.win?(feedback)
         puts 'end game'
         break
