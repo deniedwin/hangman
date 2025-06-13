@@ -7,6 +7,6 @@ class Judge
         positions.push(index)
       end
     end
-    feedback = { found: guess, positions: positions }
+    feedback = { guess: guess, positions: positions, secret_word: secret_word }
   end
 end
