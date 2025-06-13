@@ -26,8 +26,12 @@ class Player
     load == 'l' || load == 'n'
   end
 
-  def load_or_new?
-    puts 'load or new game?'
+  def valid_save?(save)
+    save == 'y' || save == 'n'
+  end
+
+  def load_or_new
+    puts 'load or new game? [l/n]'
     loop do
       load = gets.downcase.chomp
       if !valid_command?(load)
@@ -43,7 +47,19 @@ class Player
   end
   
   def save_game
-    puts 'save game'
+    puts 'want to save the game? [y/n]'
+    loop do
+      save = gets.downcase.chomp
+      if !valid_save?(save)
+        puts 'invalid input'
+      elsif save == 'y'
+        puts 'game saved'
+        return 'y'
+      elsif save == 'n'
+        puts 'continue'
+        return 'n'
+      end
+    end
   end
 
 end

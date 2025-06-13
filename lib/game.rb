@@ -15,16 +15,17 @@ class Game
     @max_guess_attempts = @secret_word.length+1
     @won = false
     puts 'game started'
-    puts @secret_word
+    puts "secret word: #{@secret_word}"
   end
 
   def play_rounds
-    puts @player.load_or_new?
+    @player.load_or_new
     @max_guess_attempts.times do
       guess = @player.input_guess(@board.history_guesses)
       feedback = @judge.check_guess(guess, @secret_word)
       @board.record_turn(@secret_word, feedback)
       @board.draw_board
+      @player.save_game
       puts ''
       if @board.win?(feedback)
         @won = true
