@@ -1,12 +1,15 @@
+# board.rb
+
 class Board
+  attr_reader :history_guesses
+
   def initialize(secret_word_length)
-    @hangman = Array.new(secret_word_length, '')
+    @hangman = Array.new(secret_word_length, '_')
     @history_guesses = Array.new()
-    @won = false
   end
 
   def draw_board
-    puts "guesses: #{@history_guesses}"
+    puts "previous guesses: #{@history_guesses}"
     @hangman.each{|x| print x, ' '}
     puts ''
   end
@@ -19,13 +22,10 @@ class Board
   end
 
   def win?(feedback)
-    puts 'checking match'
-    puts @hangman.to_s
-    puts feedback[:secret_word]
-
-    if feedback[:secret_word] == @hangman.to_s
-      puts 'someone has won'
-      @won = true
+    won = false
+    if feedback[:secret_word] == @hangman.join
+      won = true
     end
+    won
   end
 end

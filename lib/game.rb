@@ -1,3 +1,5 @@
+# game.rb
+
 class Game
   def start_game
     pre_setup
@@ -17,21 +19,26 @@ class Game
   end
 
   def play_rounds
+    puts @player.load_or_new?
     @max_guess_attempts.times do
-      guess = @player.input_guess
+      guess = @player.input_guess(@board.history_guesses)
       feedback = @judge.check_guess(guess, @secret_word)
       @board.record_turn(@secret_word, feedback)
       @board.draw_board
       puts ''
       if @board.win?(feedback)
-        puts 'end game'
+        @won = true
         break
       end
     end
   end
 
   def announce_result
-    puts 'announce results so far'
+    if @won
+      puts 'player won'
+    else
+      puts 'player lost'
+    end
   end
 
   def choose_code_word

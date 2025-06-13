@@ -1,3 +1,4 @@
+# main.rb
 # requiered files inside lib folder for app to run correctly
 require_relative 'lib/game'
 require_relative 'lib/board'

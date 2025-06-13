@@ -1,3 +1,5 @@
+# judge.rb
+
 class Judge
   def check_guess(guess, secret_word)
     positions = []
