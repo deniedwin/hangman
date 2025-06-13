@@ -17,7 +17,7 @@ class Player
       end
     end
   end
-
+  
   def valid_input?(guess)
     guess.size == 1 && VALID_INPUTS.include?(guess)
   end
