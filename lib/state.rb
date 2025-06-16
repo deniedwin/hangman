@@ -1,7 +1,17 @@
 # state.rb
+require 'yaml'
 
 class State
-  def save_state
-    puts 'saving game now'
+  SAVE_FILE = save_file.yml
+
+  def self.save(game)
+    File.open(SAVE_FILE, 'w') do |file|
+      file.write(YAML.dump(game))
+    end
+  end
+
+  def self.load
+    return nil unless File.exist?(SAVE_FILE)
+    YAML.load_file(SAVE_FILE)
   end
 end

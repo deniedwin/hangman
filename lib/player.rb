@@ -53,6 +53,7 @@ class Player
       if !valid_save?(save)
         puts 'invalid input'
       elsif save == 'y'
+        State.save(game)    # save game state here
         puts 'game saved'
         return 'y'
       elsif save == 'n'
