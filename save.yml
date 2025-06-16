@@ -1,18 +1,17 @@
 --- !ruby/object:Game
-secret_word: movies
+secret_word: ivory
 player: !ruby/object:Player {}
 board: !ruby/object:Board
   hangman:
+  - i
   - _
   - _
-  - v
-  - _
-  - e
-  - s
+  - r
+  - "y"
   history_guesses:
-  - v
-  - s
-  - e
+  - "y"
+  - r
+  - i
 judge: !ruby/object:Judge {}
-max_guess_attempts: 7
+tries_left: 3
 won: false
