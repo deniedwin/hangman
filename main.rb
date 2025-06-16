@@ -8,9 +8,13 @@ require_relative 'lib/state'
 
 # class that runs the game
 class GameRunner
-  def self.run
-    hangman = Game.new
-    hangman.start_game
+  if Player.new.load_or_new == 'l'
+    game = State.load
+    game.play_rounds
+    game.announce_result
+  else
+    game = Game.new
+    game.start_game
   end
 end
 
