@@ -46,7 +46,7 @@ class Player
     end
   end
   
-  def save_game
+  def save_game(game)
     puts 'want to save the game? [y/n]'
     loop do
       save = gets.downcase.chomp

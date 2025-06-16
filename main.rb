@@ -8,13 +8,21 @@ require_relative 'lib/state'
 
 # class that runs the game
 class GameRunner
-  if Player.new.load_or_new == 'l'
-    game = State.load
-    game.play_rounds
-    game.announce_result
-  else
-    game = Game.new
-    game.start_game
+  def self.run
+    if Player.new.load_or_new == 'l'
+      game = State.load
+      if game
+        game.play_rounds
+        game.announce_result
+      else
+        puts "No saved game found. Starting a new game."
+        game = Game.new
+        game.start_game
+      end
+    else
+      game = Game.new
+      game.start_game
+    end
   end
 end
 

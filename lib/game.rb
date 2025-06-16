@@ -19,7 +19,6 @@ class Game
   end
 
   def play_rounds
-    @player.load_or_new
     @max_guess_attempts.times do
       guess = @player.input_guess(@board.history_guesses)
       feedback = @judge.check_guess(guess, @secret_word)
@@ -27,7 +26,7 @@ class Game
       @board.draw_board
       @player.save_game(self)
       puts ''
-      
+
       if @board.win?(feedback)
         @won = true
         break

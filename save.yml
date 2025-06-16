@@ -1,0 +1,18 @@
+--- !ruby/object:Game
+secret_word: movies
+player: !ruby/object:Player {}
+board: !ruby/object:Board
+  hangman:
+  - _
+  - _
+  - v
+  - _
+  - e
+  - s
+  history_guesses:
+  - v
+  - s
+  - e
+judge: !ruby/object:Judge {}
+max_guess_attempts: 7
+won: false
