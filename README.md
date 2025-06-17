@@ -2,7 +2,7 @@
 
 Guess a word where you have a fix amount of guesses. You can save or exit the game.
 
-## How to Play?
+## How to play?
 
 - At the start of the game, choose:
   - **`l`** to load a saved game.
@@ -16,7 +16,7 @@ You win if you can guess the word within the max attempts.
 
 ---
 
-## Game Loop Flowchart
+## Game loop flowchart
 
 ```sql
 +-------------------+
@@ -84,19 +84,19 @@ You win if you can guess the word within the max attempts.
 
 ```
 
-## Expectations and Challenges
+## Expectations and challenges
 
 When I started this project, I had no specific expectations. I knew the chapter before this project (in The Odin Project) was about files and serialization, so I assumed I had to use those ideas. However, I didn’t expect I would need to do extra research on serialization outside the curriculum. The Odin article explained what serialization is, but it didn’t show how to actually use it. Connecting the dots took some extra effort.
 
 The most confusing part of the project was figuring out how to save the game state to a file and then load it back correctly. It was also tricky to pass around the previous guesses so they could be reused after loading a saved game.
 
-## Results and Evaluation
+## Results and evaluation
 
 I’m happy with how the game works, but not 100%. The structure is one of the best parts: I split everything into separate files and made it modular, which made it easier to understand and debug. I also tried to keep the logic simple and close to C-style flow control, which made the game feel clean and efficient.
 
 Some things could be improved. I think I should add more comments to the code to explain how each method works. The UI can be made more readable or fun, maybe using ASCII graphics. One more design issue I noticed: the `Player` class currently has a method `load_or_new`, which probably doesn't belong there, I think fits better in the `Game` class.
 
-## Notes for Future Revisiting
+## Notes for future revisiting
 
 Next time, I’d like to improve the user interface, maybe use ASCII art or even upload the game to a website. I don’t yet know how to connect Ruby with HTML/CSS, but that’s something I want to explore. I also want to clean up the code a little more by better separating responsibilities between classes.
 
