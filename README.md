@@ -8,7 +8,7 @@ Guess a word where you have a fix amount of guesses. You can save or exit the ga
   - **`l`** to load a saved game.
   - **`n`** to start a new game.
 - Then:
-  - Type: a letter **(a-z)** to guess.
+  - Type: letter from **(a-z)** to guess.
   - Type: **`1`** to save.
   - Type: **`2`** to exit.
 
