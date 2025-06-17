@@ -1,4 +1,4 @@
-# Hangman (Ruby Terminal Game)
+# Hangman (ruby terminal game)
 
 Guess a word where you have a fix amount of guesses. You can save the game or exit the game.
 
@@ -29,8 +29,8 @@ You win if you can guess the game within the amount of max attempts.
 +--------+----------+
          |
          |--- [l] -->+-------------------------+
-         |           | Load from save.yml     |
-         |           +-----------+-------------+
+         |           | Load from save.yml      |
+         |[n]        +-----------+-------------+
          |                       |
          |                       v
          |              +------------------+
@@ -62,14 +62,14 @@ You win if you can guess the game within the amount of max attempts.
           |
           v
 +---------------------------+
-|  Word Completed? (Win?)  |
+|  Word Completed? (Win?)   |
 +----+----------------------+
-     | Yes                      No
-     v                         |
-+-------------+               |
-| "You Win!"  |               |
-+-------------+               |
-     |                        v
+     | Yes                 | No
+     v                     |
++-------------+            |
+| "You Win!"  |            |
++-------------+            |
+     |                     v
      |               +---------------------+
      |               | Tries Left? (0?)    |
      |               +---------+-----------+
