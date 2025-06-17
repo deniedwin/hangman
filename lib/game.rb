@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # game.rb
 
-class Game
+class Game # rubocop:disable Style/Documentation
   def start_game
     setup
     play
@@ -18,23 +20,22 @@ class Game
     # puts "secret word: #{@secret_word}"
   end
 
-  def play
-
+  def play # rubocop:disable Metrics/MethodLength
     puts "secret word: #{@secret_word}"
     @board.draw
 
-    while @tries_left > 0
+    while @tries_left.positive?
       puts "tries left: #{@tries_left}"
       guess = @player.get_input(@board.history_guesses)
 
       if guess == :save
         State.save(self)
-        puts "game saved"
+        puts 'game saved'
         next
       end
 
       if guess == :exit
-        puts "exit game"
+        puts 'exit game'
         exit
       end
 
@@ -53,26 +54,26 @@ class Game
 
   def result
     if @won
-      puts "you won!"
+      puts 'you won!'
     else
-      puts "you lost!"
+      puts 'you lost!'
       puts "word was: #{@secret_word}"
     end
   end
 
   def restart
-    puts "new game? (y/n)"
+    puts 'new game? (y/n)'
     input = gets.chomp.downcase
-    if input == "y"
+    if input == 'y'
       Game.new.start_game
     else
-      puts "bye"
+      puts 'bye'
       exit
     end
   end
 
   def pick_word
-    file = File.open("google-10000-english-no-swears.txt", "r")
+    file = File.open('google-10000-english-no-swears.txt', 'r')
     words = file.read.split
     list = words.select { |w| w.length >= 5 && w.length <= 6 }
     list.sample

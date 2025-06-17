@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # main.rb
 # requiered files inside lib folder for app to run correctly
 
@@ -7,8 +9,8 @@ require_relative 'lib/judge'
 require_relative 'lib/player'
 require_relative 'lib/state'
 
-class GameRunner
-  def self.run
+class GameRunner # rubocop:disable Style/Documentation
+  def self.run # rubocop:disable Metrics/MethodLength
     player = Player.new
     choice = player.load_or_new
 

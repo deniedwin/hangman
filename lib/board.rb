@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # board.rb
 
-class Board
+class Board # rubocop:disable Style/Documentation
   attr_reader :history_guesses
 
   def initialize(secret_word_length)
@@ -24,4 +26,3 @@ class Board
     @hangman.join == feedback[:secret_word]
   end
 end
-

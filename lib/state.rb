@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 # state.rb
 require 'yaml'
 
-class State
+class State # rubocop:disable Style/Documentation
   SAVE_FILE = 'save.yml'
 
   def self.save(game)
@@ -10,6 +12,7 @@ class State
 
   def self.load
     return nil unless File.exist?(SAVE_FILE)
+
     YAML.unsafe_load_file(SAVE_FILE)
   end
 end
