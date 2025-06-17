@@ -1,6 +1,6 @@
 # Hangman (ruby terminal game)
 
-Guess a word where you have a fix amount of guesses. You can save the game or exit the game.
+Guess a word where you have a fix amount of guesses. You can save or exit the game.
 
 ## How to Play?
 
@@ -8,11 +8,11 @@ Guess a word where you have a fix amount of guesses. You can save the game or ex
   - **`l`** to load a saved game.
   - **`n`** to start a new game.
 - Then:
-  - Type a **letter (a-z)** to guess.
-  - Type **`1`** to save.
-  - Type **`2`** to exit.
+  - Type: a letter **(a-z)** to guess.
+  - Type: **`1`** to save.
+  - Type: **`2`** to exit.
 
-You win if you can guess the game within the amount of max attempts.
+You win if you can guess the word within the max attempts.
 
 ---
 
