@@ -16,7 +16,7 @@ You win if you can guess the game within the amount of max attempts.
 
 ---
 
-## 🗺️ Game Loop Flowchart
+## Game Loop Flowchart
 
 ```sql
 +-------------------+
