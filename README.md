@@ -28,10 +28,10 @@ You win if you can guess the word within the max attempts.
 | Load or New? [l/n]|
 +--------+----------+
          |
-         |--- [l] -->+-------------------------+
-         |           | Load from save.yml      |
-         |[n]        +-----------+-------------+
-         |                       |
+         |           +-------------------------+
+         |--- [l] -->| Load from save.yml      |
+         |           +-----------+-------------+
+         |[n]                    |
          |                       v
          |              +------------------+
          |              |  Draw Board      |
